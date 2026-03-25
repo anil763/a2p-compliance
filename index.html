@@ -29,7 +29,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
 
-    /* ── HEADER / NAV ── */
+    /* -- HEADER / NAV -- */
     .site-header {
       background: var(--ink);
       padding: 1rem 2rem;
@@ -55,7 +55,7 @@
     }
     .site-header nav a:hover { color: var(--gold); }
 
-    /* ── HERO ── */
+    /* -- HERO -- */
     .hero {
       background: linear-gradient(135deg, var(--ink) 0%, #1a1a2e 100%);
       color: var(--white);
@@ -104,9 +104,9 @@
       transition: transform 0.2s;
     }
     .hero .cta-arrow:hover { transform: translateY(3px); }
-    .hero .cta-arrow::after { content: ' ↓'; }
+    .hero .cta-arrow::after { content: ' \2193'; }
 
-    /* ── OPT-IN SECTION ── */
+    /* -- OPT-IN SECTION -- */
     .optin-section {
       max-width: 580px;
       margin: -2rem auto 0;
@@ -215,7 +215,7 @@
       line-height: 1.5;
     }
 
-    /* ── WHAT YOU GET ── */
+    /* -- WHAT YOU GET -- */
     .benefits {
       max-width: 700px;
       margin: 0 auto;
@@ -243,55 +243,7 @@
     .benefit-item h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
     .benefit-item p { font-size: 0.85rem; color: var(--ink-muted); line-height: 1.5; }
 
-    /* ── LEGAL PAGES (shared styles) ── */
-    .legal-page {
-      display: none;
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 5rem;
-    }
-    .legal-page.active { display: block; }
-    .legal-page h1 {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-    .legal-page .meta {
-      font-size: 0.85rem;
-      color: var(--ink-muted);
-      margin-bottom: 2rem;
-    }
-    .legal-page h2 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-top: 2rem;
-      margin-bottom: 0.6rem;
-      color: var(--ink);
-    }
-    .legal-page p { margin-bottom: 1rem; color: var(--ink-soft); font-size: 0.93rem; }
-    .legal-page ul { margin: 0.6rem 0 1.2rem 1.5rem; color: var(--ink-soft); font-size: 0.93rem; }
-    .legal-page li { margin-bottom: 0.4rem; }
-    .legal-page .back-link {
-      display: inline-block;
-      margin-bottom: 1.5rem;
-      color: var(--gold-dark);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .legal-page .back-link:hover { text-decoration: underline; }
-    .legal-page .back-link::before { content: '← '; }
-    .legal-page .callout {
-      background: var(--green-bg);
-      border-left: 4px solid var(--green);
-      padding: 1rem 1.2rem;
-      margin: 1.2rem 0;
-      border-radius: 0 6px 6px 0;
-      font-size: 0.9rem;
-      color: var(--green);
-    }
-
-    /* ── FOOTER ── */
+    /* -- FOOTER -- */
     footer {
       background: var(--ink);
       color: rgba(255,255,255,0.5);
@@ -324,7 +276,7 @@
       line-height: 1.5;
     }
 
-    /* ── RESPONSIVE ── */
+    /* -- RESPONSIVE -- */
     @media (max-width: 600px) {
       .site-header { flex-direction: column; gap: 0.8rem; text-align: center; }
       .site-header nav a { margin-left: 0.8rem; }
@@ -332,250 +284,97 @@
       .optin-card { padding: 1.8rem 1.4rem; }
       .benefits-grid { grid-template-columns: 1fr; }
     }
-
-    /* ── PAGE ROUTING (hide/show) ── */
-    .main-content { display: block; }
-    .main-content.hidden { display: none; }
   </style>
 </head>
 <body>
 
-  <!-- ═══ HEADER ═══ -->
+  <!-- HEADER -->
   <header class="site-header">
-    <a href="#" class="logo" onclick="showPage('home'); return false;">Anil Creates<span>.</span></a>
+    <a href="./" class="logo">Anil Creates<span>.</span></a>
     <nav>
-      <a href="#" onclick="showPage('home'); return false;">Home</a>
-      <a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a>
-      <a href="#" onclick="showPage('terms'); return false;">Terms of Service</a>
-      <a href="#optin-form" onclick="showPage('home'); return false;">Contact</a>
+      <a href="./">Home</a>
+      <a href="./privacy-policy/">Privacy Policy</a>
+      <a href="./terms-of-service/">Terms of Service</a>
+      <a href="#optin-form">Contact</a>
     </nav>
   </header>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- HOME / OPT-IN PAGE                         -->
-  <!-- ═══════════════════════════════════════════ -->
-  <div id="page-home" class="main-content">
+  <!-- HERO -->
+  <section class="hero">
+    <h1>UGC That <em>Converts</em></h1>
+    <p>Authentic, scroll-stopping content created for brands that want real results. Get updates on availability, exclusive offers, and booking info.</p>
+    <a href="#optin-form" class="cta-arrow">Get on the list</a>
+  </section>
 
-    <!-- HERO -->
-    <section class="hero">
-      <h1>UGC That <em>Converts</em></h1>
-      <p>Authentic, scroll-stopping content created for brands that want real results. Get updates on availability, exclusive offers, and booking info.</p>
-      <a href="#optin-form" class="cta-arrow">Get on the list</a>
-    </section>
+  <!-- OPT-IN FORM -->
+  <section class="optin-section" id="optin-form">
+    <div class="optin-card">
+      <h2>Stay in the Loop</h2>
+      <p class="subtitle">Get text updates on availability, promos, and new content drops.</p>
 
-    <!-- OPT-IN FORM -->
-    <section class="optin-section" id="optin-form">
-      <div class="optin-card">
-        <h2>Stay in the Loop</h2>
-        <p class="subtitle">Get text updates on availability, promos, and new content drops.</p>
-
-        <form id="sms-optin-form" onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label for="full-name">Full Name</label>
-            <input type="text" id="full-name" name="name" placeholder="Your name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@email.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
-          </div>
-
-          <!-- ═══ A2P REQUIRED: CONSENT CHECKBOX ═══ -->
-          <div class="consent-group">
-            <input type="checkbox" id="sms-consent" name="sms_consent" required>
-            <label for="sms-consent">
-              By checking this box, I agree to receive recurring automated promotional and transactional text messages (e.g., appointment reminders, offers, updates) from <strong>Anil Creates LLC</strong> at the phone number provided. Consent is not a condition of purchase. Message frequency varies, up to 10 msgs/mo. Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. View our <a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a> &amp; <a href="#" onclick="showPage('terms'); return false;">Terms of Service</a>.
-            </label>
-          </div>
-
-          <button type="submit" class="btn-submit">Sign Me Up</button>
-
-          <p class="form-note">
-            We respect your privacy. No spam, ever. Reply STOP to opt out at any time.<br>
-            Message and data rates may apply.
-          </p>
-        </form>
-      </div>
-    </section>
-
-    <!-- BENEFITS -->
-    <section class="benefits">
-      <h2>What You'll Get</h2>
-      <div class="benefits-grid">
-        <div class="benefit-item">
-          <div class="icon">📱</div>
-          <h3>Priority Booking</h3>
-          <p>Be the first to know when slots open up for new UGC projects.</p>
+      <form id="sms-optin-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="name" placeholder="Your name" required>
         </div>
-        <div class="benefit-item">
-          <div class="icon">🎯</div>
-          <h3>Exclusive Offers</h3>
-          <p>Subscriber-only discounts and package deals on content creation.</p>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required>
         </div>
-        <div class="benefit-item">
-          <div class="icon">🔔</div>
-          <h3>Reminders</h3>
-          <p>Appointment confirmations and session reminders so nothing slips.</p>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
         </div>
-      </div>
-    </section>
-  </div>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- PRIVACY POLICY PAGE                        -->
-  <!-- ═══════════════════════════════════════════ -->
-  <div id="page-privacy" class="legal-page">
-    <a href="#" class="back-link" onclick="showPage('home'); return false;">Back to Home</a>
-    <h1>Privacy Policy</h1>
-    <p class="meta">Effective Date: March 25, 2026 &nbsp;|&nbsp; Last Updated: March 25, 2026</p>
+        <!-- A2P REQUIRED: CONSENT CHECKBOX -->
+        <div class="consent-group">
+          <input type="checkbox" id="sms-consent" name="sms_consent" required>
+          <label for="sms-consent">
+            By checking this box, I agree to receive recurring automated promotional and transactional text messages (e.g., appointment reminders, offers, updates) from <strong>Anil Creates LLC</strong> at the phone number provided. Consent is not a condition of purchase. Message frequency varies, up to 10 msgs/mo. Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. View our <a href="./privacy-policy/">Privacy Policy</a> &amp; <a href="./terms-of-service/">Terms of Service</a>.
+          </label>
+        </div>
 
-    <p>Anil Creates LLC ("we," "us," "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or participate in our SMS messaging program.</p>
+        <button type="submit" class="btn-submit">Sign Me Up</button>
 
-    <h2>Information We Collect</h2>
-    <p>We may collect the following types of information:</p>
-    <ul>
-      <li><strong>Personal Information:</strong> Name, email address, phone number, and other details you provide through our forms</li>
-      <li><strong>SMS-Related Data:</strong> Phone number, opt-in/opt-out status, message delivery records, and consent timestamps</li>
-      <li><strong>Usage Data:</strong> Browser type, IP address, pages visited, time spent, and device information collected through cookies and similar technologies</li>
-      <li><strong>Transaction Data:</strong> Purchase history and billing information (payment details are processed securely through third-party processors)</li>
-    </ul>
-
-    <h2>How We Use Your Information</h2>
-    <ul>
-      <li>To send SMS messages you have consented to receive (promotional offers, appointment reminders, and service updates)</li>
-      <li>To process and fulfill orders and service requests</li>
-      <li>To manage appointments, bookings, and scheduling</li>
-      <li>To communicate with you about your account or our services</li>
-      <li>To improve our website, services, and customer experience</li>
-      <li>To comply with legal obligations and enforce our terms</li>
-    </ul>
-
-    <h2>How We Protect Your Information</h2>
-    <p>We implement commercially reasonable administrative, technical, and physical security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
-
-    <h2>Information Sharing &amp; Disclosure</h2>
-    <p>We do not sell or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
-    <ul>
-      <li><strong>Service Providers:</strong> Trusted third-party vendors who help operate our business (e.g., SMS platforms, payment processors), bound by confidentiality agreements</li>
-      <li><strong>Legal Requirements:</strong> When required by law, regulation, or legal process</li>
-      <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
-      <li><strong>Consent:</strong> With your explicit consent for a specific purpose</li>
-    </ul>
-
-    <div class="callout">
-      <strong>Important:</strong> We will never share, sell, rent, or trade your opt-in consent, phone number, or SMS-related data with any third parties for their own marketing or promotional purposes.
+        <p class="form-note">
+          We respect your privacy. No spam, ever. Reply STOP to opt out at any time.<br>
+          Message and data rates may apply.
+        </p>
+      </form>
     </div>
+  </section>
 
-    <h2>Your Rights</h2>
-    <p>Depending on your jurisdiction, you may have the right to:</p>
-    <ul>
-      <li>Access, correct, or delete your personal information</li>
-      <li>Opt out of marketing communications at any time</li>
-      <li>Request a copy of the data we hold about you</li>
-      <li>Withdraw consent for SMS messaging by replying STOP to any message</li>
-    </ul>
-
-    <h2>Cookies &amp; Tracking</h2>
-    <p>Our website may use cookies and similar tracking technologies to enhance your browsing experience and collect usage data. You can manage cookie preferences through your browser settings.</p>
-
-    <h2>Children's Privacy</h2>
-    <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected information from a minor, we will take steps to delete it promptly.</p>
-
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date. Your continued use of our services constitutes acceptance of the updated policy.</p>
-
-    <h2>Contact Us</h2>
-    <p>If you have questions about this Privacy Policy, contact us:</p>
-    <ul>
-      <li>Email: <a href="mailto:anil@gunjal.com" style="color:var(--gold-dark);">anil@gunjal.com</a></li>
-      <li>Phone: <a href="tel:+16092550195" style="color:var(--gold-dark);">(609) 255-0195</a></li>
-      <li>Website: <a href="https://anilcreatesllc.com" style="color:var(--gold-dark);">anilcreatesllc.com</a></li>
-    </ul>
-  </div>
-
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- TERMS OF SERVICE PAGE                      -->
-  <!-- ═══════════════════════════════════════════ -->
-  <div id="page-terms" class="legal-page">
-    <a href="#" class="back-link" onclick="showPage('home'); return false;">Back to Home</a>
-    <h1>Terms of Service</h1>
-    <p class="meta">Effective Date: March 25, 2026 &nbsp;|&nbsp; Last Updated: March 25, 2026</p>
-
-    <p>These Terms of Service ("Terms") govern your use of the services provided by Anil Creates LLC ("Company," "we," "us"), including our website, SMS messaging program, and related services. By using our services, you agree to these Terms.</p>
-
-    <h2>SMS Messaging Terms</h2>
-    <p>By opting in to our SMS messaging program, you agree to the following:</p>
-    <ul>
-      <li>You consent to receive recurring automated text messages from Anil Creates LLC at the phone number you provided</li>
-      <li>Messages may include promotional content, appointment reminders, booking confirmations, scheduling updates, and service announcements</li>
-      <li>Message frequency varies; up to 10 messages per month</li>
-      <li>Message and data rates may apply based on your mobile carrier plan</li>
-      <li>Consent is not required as a condition of purchasing any goods or services</li>
-      <li>You may opt out at any time by replying STOP to any message</li>
-      <li>For help, reply HELP or contact us using the information below</li>
-    </ul>
-
-    <div class="callout">
-      <strong>Opt-Out:</strong> Reply STOP to any message to unsubscribe. You'll receive a one-time confirmation. Reply HELP for support info. Message and data rates may apply.
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <h2>What You'll Get</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="icon">&#x1F4F1;</div>
+        <h3>Priority Booking</h3>
+        <p>Be the first to know when slots open up for new UGC projects.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="icon">&#x1F3AF;</div>
+        <h3>Exclusive Offers</h3>
+        <p>Subscriber-only discounts and package deals on content creation.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="icon">&#x1F514;</div>
+        <h3>Reminders</h3>
+        <p>Appointment confirmations and session reminders so nothing slips.</p>
+      </div>
     </div>
+  </section>
 
-    <h2>Opt-In Methods</h2>
-    <p>You may provide consent to receive SMS messages through:</p>
-    <ul>
-      <li>Submitting your phone number via our website opt-in form and checking the SMS consent checkbox</li>
-      <li>Texting a keyword (e.g., "JOIN" or "YES") to our designated number</li>
-      <li>Providing verbal consent during a call or in-person interaction</li>
-      <li>Opting in through a third-party platform where you've given explicit permission</li>
-    </ul>
-
-    <h2>No Shared Consent</h2>
-    <p>We do not share, sell, rent, or trade your opt-in consent or phone number with any third parties for marketing or promotional purposes. Your consent is exclusively between you and Anil Creates LLC.</p>
-
-    <h2>Supported Carriers</h2>
-    <p>Our SMS program is supported on all major U.S. carriers, including AT&amp;T, T-Mobile, Verizon, Sprint, and their affiliates. Carriers are not liable for delayed or undelivered messages.</p>
-
-    <h2>Acceptable Use</h2>
-    <p>You agree not to use our services to violate any law or regulation, transmit unauthorized advertising, impersonate any person or entity, or interfere with our services.</p>
-
-    <h2>Intellectual Property</h2>
-    <p>All content, branding, designs, and materials on our website and in our communications are the property of Anil Creates LLC and are protected by applicable intellectual property laws.</p>
-
-    <h2>Disclaimer of Warranties</h2>
-    <p>Our services are provided on an "as is" and "as available" basis. We make no warranties, express or implied, regarding reliability, accuracy, or fitness for a particular purpose.</p>
-
-    <h2>Limitation of Liability</h2>
-    <p>To the fullest extent permitted by law, Anil Creates LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services.</p>
-
-    <h2>Indemnification</h2>
-    <p>You agree to indemnify and hold harmless Anil Creates LLC and its officers, directors, employees, and agents from any claims, damages, or expenses arising from your use of our services or violation of these Terms.</p>
-
-    <h2>Governing Law</h2>
-    <p>These Terms are governed by the laws of the State in which Anil Creates LLC is registered, without regard to conflict of law provisions.</p>
-
-    <h2>Changes to Terms</h2>
-    <p>We reserve the right to modify these Terms at any time. Updated Terms will be posted with a revised effective date. Continued use of our services constitutes acceptance of updated Terms.</p>
-
-    <h2>Contact Us</h2>
-    <p>Questions about these Terms? Contact us:</p>
-    <ul>
-      <li>Email: <a href="mailto:anil@gunjal.com" style="color:var(--gold-dark);">anil@gunjal.com</a></li>
-      <li>Phone: <a href="tel:+16092550195" style="color:var(--gold-dark);">(609) 255-0195</a></li>
-      <li>Website: <a href="https://anilcreatesllc.com" style="color:var(--gold-dark);">anilcreatesllc.com</a></li>
-    </ul>
-  </div>
-
-  <!-- ═══ FOOTER ═══ -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-brand">Anil Creates LLC</div>
     <div class="footer-links">
-      <a href="#" onclick="showPage('home'); return false;">Home</a>
-      <a href="#" onclick="showPage('privacy'); return false;">Privacy Policy</a>
-      <a href="#" onclick="showPage('terms'); return false;">Terms of Service</a>
+      <a href="./">Home</a>
+      <a href="./privacy-policy/">Privacy Policy</a>
+      <a href="./terms-of-service/">Terms of Service</a>
       <a href="mailto:anil@gunjal.com">Contact</a>
     </div>
     <p>&copy; 2026 Anil Creates LLC. All rights reserved.</p>
@@ -584,23 +383,7 @@
     </div>
   </footer>
 
-  <!-- ═══ JAVASCRIPT ═══ -->
   <script>
-    function showPage(page) {
-      document.getElementById('page-home').classList.add('hidden');
-      document.getElementById('page-privacy').classList.remove('active');
-      document.getElementById('page-terms').classList.remove('active');
-
-      if (page === 'home') {
-        document.getElementById('page-home').classList.remove('hidden');
-      } else if (page === 'privacy') {
-        document.getElementById('page-privacy').classList.add('active');
-      } else if (page === 'terms') {
-        document.getElementById('page-terms').classList.add('active');
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
     function handleSubmit(e) {
       e.preventDefault();
       const consent = document.getElementById('sms-consent');
@@ -608,7 +391,6 @@
         alert('Please check the SMS consent box to continue.');
         return;
       }
-      // In production, this would submit to GHL or your backend
       alert('Thank you! You\'ve been added to our list. Watch for a confirmation text.');
     }
   </script>
